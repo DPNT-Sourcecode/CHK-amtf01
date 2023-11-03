@@ -27,7 +27,7 @@ ITEM_TABLE = {
               }
 
 def checkout(skus):
-
+    
     if not input_validation(skus=skus):
         return -1
     
@@ -62,7 +62,6 @@ def input_validation(skus):
     for sku in skus:
         if sku not in ITEM_TABLE:
             return False
-        return True
-    
-print(checkout(""))
+    return True
+
 
