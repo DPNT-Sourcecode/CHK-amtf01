@@ -27,8 +27,7 @@ ITEM_TABLE = {
               }
 
 def checkout(skus):
-    skus = skus.upper()
-
+    
     if not input_validation(skus=skus):
         return -1
     
@@ -60,10 +59,8 @@ def calculate_basket_total(skus):
 
 def input_validation(skus):
     
-    if not skus:
-        return False
-    
     for sku in skus:
         if sku not in ITEM_TABLE:
             return False
         return True
+
