@@ -4,7 +4,6 @@
 # skus = unicode string
 
 ITEM_TABLE = {
-
             "A": {
                     "price": 50,
                     "offer_price": 130,
@@ -57,6 +56,8 @@ def calculate_basket_total(skus):
 
     d_total_price = ITEM_TABLE.get("D").get("price") * d_count
 
+    return a_total_price + b_total_price + c_total_price + d_total_price
+
 def input_validation(skus):
     
     if not skus:
@@ -66,6 +67,5 @@ def input_validation(skus):
         if sku not in ITEM_TABLE:
             return False
         return True
-    
-print(checkout("AAA"))
+
 
