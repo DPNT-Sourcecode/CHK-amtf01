@@ -72,4 +72,3 @@ def input_validation(skus):
         if sku not in ITEM_TABLE:
             return False
     return True
-
