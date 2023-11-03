@@ -23,7 +23,13 @@ ITEM_TABLE = {
                     "price": 15,
                     "offer_price": 0,
                     "offer_quantity": 0
+                    },
+            "E": {
+                    "price": 40,
+                    "offer_price": 0,
+                    "offer_quantity": 0
                     }
+            
               }
 
 def checkout(skus):
@@ -38,6 +44,7 @@ def calculate_basket_total(skus):
     b_count = skus.count("B")
     c_count = skus.count("C")
     d_count = skus.count("D")
+    e_count = skus.count("E")
 
     if a_count >= ITEM_TABLE.get("A").get("offer_quantity"):
         quotient, remainder = divmod(a_count, ITEM_TABLE.get("A").get("offer_quantity"))
@@ -55,7 +62,9 @@ def calculate_basket_total(skus):
 
     d_total_price = ITEM_TABLE.get("D").get("price") * d_count
 
-    return a_total_price + b_total_price + c_total_price + d_total_price
+    e_total_price = ITEM_TABLE.get("E").get("price") * e_count
+
+    return a_total_price + b_total_price + c_total_price + d_total_price + e_total_price
 
 def input_validation(skus):
     
@@ -63,3 +72,4 @@ def input_validation(skus):
         if sku not in ITEM_TABLE:
             return False
     return True
+
