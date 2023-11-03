@@ -41,13 +41,13 @@ def calculate_basket_total(skus):
 
     if a_count >= ITEM_TABLE.get("A").get("offer_quantity"):
         quotient, remainder = divmod(a_count, ITEM_TABLE.get("A").get("offer_quantity"))
-        a_total_price = (quotient * ITEM_TABLE.get("A").get("offer_price")) + (remainder * ITEM_TABLE.get("A").get("offer_quantity"))
+        a_total_price = (quotient * ITEM_TABLE.get("A").get("offer_price")) + (remainder * ITEM_TABLE.get("A").get("price"))
     else:
         a_total_price = ITEM_TABLE.get("A").get("price") * a_count
 
     if b_count >= ITEM_TABLE.get("B").get("offer_quantity"):
         quotient, remainder = divmod(b_count, ITEM_TABLE.get("B").get("offer_quantity"))
-        b_total_price = (quotient * ITEM_TABLE.get("B").get("offer_price")) + (remainder * ITEM_TABLE.get("B").get("offer_quantity"))
+        b_total_price = (quotient * ITEM_TABLE.get("B").get("offer_price")) + (remainder * ITEM_TABLE.get("B").get("price"))
     else:
         b_total_price = ITEM_TABLE.get("B").get("price") * b_count
 
@@ -63,5 +63,6 @@ def input_validation(skus):
         if sku not in ITEM_TABLE:
             return False
     return True
+
 
 
