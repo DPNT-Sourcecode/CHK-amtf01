@@ -106,7 +106,7 @@ def calculate_basket_total(skus):
                 b_total_price = (remaining_b * ITEM_TABLE.get("B").get("price"))
     if f_count >= ITEM_TABLE.get("F").get("offer_quantity") + 1:
         free_f = 0
-        quotient, remainder = divmod(f_count, ITEM_TABLE.get("F").get("offer_quantity"))
+        quotient, remainder = divmod(f_count, ITEM_TABLE.get("F").get("offer_quantity") + 1)
         for i in range(quotient):
             free_f += 1
         f_total_price = (f_count * ITEM_TABLE.get("F").get("price")) - (free_f * ITEM_TABLE.get("F").get("price"))
