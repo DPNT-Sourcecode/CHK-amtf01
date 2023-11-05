@@ -30,8 +30,12 @@ ITEM_TABLE = {
                     "price": 40,
                     "offer_price": 0,
                     "offer_quantity": 2
+                    },
+            "F": {
+                    "price": 10,
+                    "offer_price": 0,
+                    "offer_quantity": 2
                     }
-            
               }
 
 def checkout(skus):
@@ -48,6 +52,7 @@ def calculate_basket_total(skus):
     c_count = skus.count("C")
     d_count = skus.count("D")
     e_count = skus.count("E")
+    f_count = skus.count("F")
 
     a_total_price = 0
 
@@ -99,14 +104,21 @@ def calculate_basket_total(skus):
                 #print("b_here", b_total_price)
             else:
                 b_total_price = (remaining_b * ITEM_TABLE.get("B").get("price"))
-                
+    if f_count >= ITEM_TABLE.get("F").get("offer_quantity") + 1:
+        free_f = 0
+        quotient, remainder = divmod(f_count, ITEM_TABLE.get("F").get("offer_quantity"))
+        for i in range(quotient):
+            free_f += 1
+        f_total_price = (f_count * ITEM_TABLE.get("F").get("price")) - (free_f * ITEM_TABLE.get("F").get("price"))
+    else:
+        f_total_price = (f_count * ITEM_TABLE.get("F").get("price"))        
                 
         
     c_total_price = ITEM_TABLE.get("C").get("price") * c_count
     d_total_price = ITEM_TABLE.get("D").get("price") * d_count
     e_total_price = ITEM_TABLE.get("E").get("price") * e_count
 
-    basket_total += (a_total_price + b_total_price + d_total_price + c_total_price + e_total_price)
+    basket_total += (a_total_price + b_total_price + d_total_price + c_total_price + e_total_price + f_total_price)
 
     return basket_total
 
