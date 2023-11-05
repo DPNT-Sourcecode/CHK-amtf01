@@ -146,6 +146,4 @@ def input_validation(skus):
             return False
     return True
 
-print(checkout("ABCDECBAABCABBAAAEEAA"))
-
 
