@@ -29,7 +29,7 @@ ITEM_TABLE = {
             "E": {
                     "price": 40,
                     "offer_price": 0,
-                    "offer_quantity": 0
+                    "offer_quantity": 2
                     }
             
               }
@@ -145,5 +145,6 @@ def input_validation(skus):
         if sku not in ITEM_TABLE:
             return False
     return True
+
 
 
