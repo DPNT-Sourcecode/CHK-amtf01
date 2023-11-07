@@ -1,4 +1,4 @@
-#from lib.solutions.CHK.constants import ITEM_TABLE
+from solutions.constants import ITEM_TABLE_OLD
 #from offer_service import * 
 
 # noinspection PyUnusedLocal
