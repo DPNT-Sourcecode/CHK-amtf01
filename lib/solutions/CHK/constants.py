@@ -169,3 +169,96 @@ ITEM_TABLE = {
         "offer_quantity": 0,
     },
 }
+
+ITEM_TABLE_OLD = {"A": {
+                    "price": 50,
+                    "offer_type": "PRICE_REDUCT_MULTI",
+                    "offer_price": 130,
+                    "offer_quantity": 3,
+                    "offer_type_1": "PRICE_REDUCT_MULTI",
+                    "offer_price_1": 200,
+                    "offer_quantity_1": 5
+                    },
+              "B": {
+                    "price": 30,
+                    "offer_type": "PRICE_REDUCT_SINGLE",
+                    "offer_price": 45,
+                    "offer_quantity": 2
+                    },
+              "C": {
+                    "price": 20,
+                    "offer_type": "",
+                    "offer_price": 0,
+                    "offer_quantity": 0
+                    },
+              "D": {
+                    "price": 15,
+                    "offer_type": "",
+                    "offer_price": 0,
+                    "offer_quantity": 0
+                    },
+            "E": {
+                    "price": 40,
+                    "offer_type": "BOGOO",
+                    "bogoo_item": "B",
+                    "offer_price": 0,
+                    "offer_quantity": 2
+                    },
+            "F": {
+                    "price": 10,
+                    "offer_type": "BOGO",
+                    "offer_price": 0,
+                    "offer_quantity": 2,
+                    }
+                
+            }
+
+
+
+test_cases = [
+    "",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "a",
+    "-",
+    "ABCa",
+    "AxA",
+    "ABCDEF",
+    "A",
+    "AA",
+    "AAA",
+    "AAAA",
+    "AAAAA",
+    "AAAAAA",
+    "AAAAAAA",
+    "AAAAAAAA",
+    "AAAAAAAAA",
+    "AAAAAAAAAA",
+    "EE",
+    "EEB",
+    "EEEB",
+    "EEEEBB",
+    "BEBEEE",
+    "A",
+    "AA",
+    "AAA",
+    "AAAA",
+    "AAAAA",
+    "AAAAAA",
+    "B",
+    "BB",
+    "BBB",
+    "BBBB",
+    "FF",
+    "FFF",
+    "FFFF",
+    "FFFFFF",
+    "FFFFFF",
+    "ABCDEFABCDEF",
+    "CDFFAECBDEAB",
+    "FFABCDECBAABCABBAAAEEAAFF",
+]
