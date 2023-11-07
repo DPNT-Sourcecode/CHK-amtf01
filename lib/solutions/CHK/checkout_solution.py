@@ -1,4 +1,4 @@
-from constants import ITEM_TABLE
+from lib.solutions.CHK.constants import ITEM_TABLE
 from offer_service import * 
 
 # noinspection PyUnusedLocal
@@ -41,3 +41,5 @@ def apply_offer(offer_type, item_id, item_count, offers_applied, basket_total = 
             basket_total += apply_normal_pricing(item_count=item_count, item_id=item_id)
 
     return basket_total
+
+print(checkout("KK"))
