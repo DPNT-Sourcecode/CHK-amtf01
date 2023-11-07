@@ -105,7 +105,7 @@ ITEM_TABLE = {
     },
     "P": {
         "price": 50,
-        "offer_type": "PRICE_REDUCT_MULTI",
+        "offer_type": "PRICE_REDUCT_SINGLE",
         "offer_price": 200,
         "offer_quantity": 5,
     },
@@ -136,8 +136,7 @@ ITEM_TABLE = {
     },
     "U": {
         "price": 40,
-        "offer_type": "BOGOO",
-        "bogoo_item": "U",
+        "offer_type": "BOGO",
         "offer_price": 0,
         "offer_quantity": 3,
     },
@@ -175,6 +174,7 @@ ITEM_TABLE = {
         "offer_quantity": 0,
     },
 }
+
 
 def checkout(skus):
     if not input_validation(skus):
@@ -294,5 +294,6 @@ def apply_bogoo(item_count, kwargs, item_id, offers_applied):
     else:
         item_total_price = ITEM_TABLE.get(item_id).get("price") * item_count
     return item_total_price
+
 
 
