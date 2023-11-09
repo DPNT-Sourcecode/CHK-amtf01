@@ -1,5 +1,5 @@
-from solutions.constants import ITEM_TABLE
-from solutions.offer_service import * 
+from lib.solutions.constants import ITEM_TABLE
+from lib.solutions.offer_service import * 
 
 # noinspection PyUnusedLocal
 # skus = unicode string
