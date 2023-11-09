@@ -1,5 +1,5 @@
-from lib.solutions.constants import ITEM_TABLE
-from lib.solutions.offer_service import * 
+from solutions.constants import ITEM_TABLE
+from solutions.offer_service import * 
 
 # noinspection PyUnusedLocal
 # skus = unicode string
@@ -49,5 +49,3 @@ def apply_offer(offer_type, item_id, item_count, offers_applied, basket_total = 
     return basket_total
 
 
-
-print(checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"))

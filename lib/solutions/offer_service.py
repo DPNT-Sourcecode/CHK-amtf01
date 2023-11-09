@@ -1,4 +1,4 @@
-from lib.solutions.constants import ITEM_TABLE
+from solutions.constants import ITEM_TABLE
 
 def apply_normal_pricing(item_count, item_id):
     item_total_price = ITEM_TABLE.get(item_id).get("price") * item_count
@@ -123,4 +123,5 @@ def apply_group_buy(group_buy_items, item_id, offers_applied):
         offers_applied[item_id] = offers_applied.get(item_id, 0) + (ITEM_TABLE.get(item_id).get("price") * item_count)
 
     return item_total_price
+
 
