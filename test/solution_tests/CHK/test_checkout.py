@@ -1,4 +1,4 @@
-from lib.solutions.CHK import input_validation, calculate_basket_total, apply_offer, checkout
+from lib.solutions.CHK.checkout_solution import input_validation, calculate_basket_total, apply_offer, checkout
 from lib.solutions.offer_service import *
 
 class TestCheckoutSolution():
@@ -216,6 +216,7 @@ class TestCheckoutSolution():
     
 
         
+
 
 
 
