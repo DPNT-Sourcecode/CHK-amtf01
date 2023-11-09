@@ -27,19 +27,27 @@ def calculate_basket_total(skus_count, offers_applied):
     return basket_total
 
 def apply_offer(offer_type, item_id, item_count, offers_applied, basket_total = 0, **kwargs):
+
                                                                                                                
-    if item_id not in offers_applied:
+    if item_id not in offers_applied and f"{item_id}_1" not in offers_applied:
         if offer_type == "BOGO":
             basket_total += apply_bogo(item_count=item_count, item_id=item_id, offers_applied=offers_applied)
         elif offer_type == "BOGOO":
-            basket_total += apply_bogoo(item_count=item_count, kwargs=kwargs, item_id=item_id, offers_applied=offers_applied)
+            skus_count = kwargs.get("skus_count")
+            basket_total += apply_bogoo(item_count=item_count, skus_count=skus_count, item_id=item_id, offers_applied=offers_applied)
         elif offer_type == "PRICE_REDUCT_MULTI":
             basket_total += apply_price_reduct_multi(item_count=item_count, item_id=item_id, offers_applied=offers_applied)
         elif offer_type == "PRICE_REDUCT_SINGLE":
             basket_total += apply_price_reduct_single(item_id=item_id,item_count=item_count, offers_applied=offers_applied)
+        elif offer_type == "GROUP_BUY":
+            skus_count = kwargs.get("skus_count")
+            group_buy_items = [item for item in skus_count for i in range(skus_count.get(item)) if ITEM_TABLE.get(item).get("offer_type") == "GROUP_BUY"]#{item: skus_count.get(item) for item in skus_count if ITEM_TABLE.get(item).get("offer_type") == "GROUP_BUY"}
+            basket_total += apply_group_buy(group_buy_items=group_buy_items, item_id=item_id, offers_applied=offers_applied)
         elif not offer_type:
             basket_total += apply_normal_pricing(item_count=item_count, item_id=item_id)
 
     return basket_total
 
-print(checkout("UUUU"))
+
+
+print(checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"))
