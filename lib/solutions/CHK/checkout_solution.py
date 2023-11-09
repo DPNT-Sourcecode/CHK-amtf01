@@ -48,4 +48,3 @@ def apply_offer(offer_type, item_id, item_count, offers_applied, basket_total = 
 
     return basket_total
 
-

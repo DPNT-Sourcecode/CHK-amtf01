@@ -123,5 +123,3 @@ def apply_group_buy(group_buy_items, item_id, offers_applied):
         offers_applied[item_id] = offers_applied.get(item_id, 0) + (ITEM_TABLE.get(item_id).get("price") * item_count)
 
     return item_total_price
-
-
